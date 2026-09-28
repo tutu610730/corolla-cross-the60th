@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corolla Cross The 60th Hybrid｜購車議價工具</title>
+<style>
+:root{--r:#e50019;--k:#171717;--g:#686868;--l:#e5e5e5;--bg:#f3f3f3;--green:#157347}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--k);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif}
+.w{max-width:920px;margin:28px auto;padding:0 16px}.s{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px #0001}
+.top{border-top:7px solid var(--r);padding:27px 32px 23px;border-bottom:1px solid var(--l)}.kick{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--r)}
+h1{font-size:25px;line-height:1.3;margin:7px 0}.sub{font-size:14px;color:var(--g)}
+.hero{margin-top:18px;background:#111;color:#fff;border-radius:12px;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px}.hero b{font-size:28px}.badge{border:1px solid #555;border-radius:99px;padding:5px 10px;font-size:12px}
+.c{padding:8px 32px 30px}.sec{padding:22px 0;border-bottom:1px solid var(--l)}.sec:last-child{border:0}h2{font-size:17px;margin:0 0 13px}
+.n{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--r);color:#fff;font-size:12px;margin-right:8px}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{border:1px solid var(--l);border-radius:11px;padding:11px 13px;background:#fff}
+.field label{display:block;font-size:13px;font-weight:750;margin-bottom:5px}.field small{display:block;color:#888;margin-top:5px;font-size:11px}
+.money{display:flex;align-items:center;gap:7px}.money span{color:#777;font-size:13px}.money input{width:100%;border:0;border-bottom:1px solid #aaa;padding:6px 2px;font-size:18px;font-weight:750;outline:none;background:transparent}
+.money input:focus{border-color:var(--r)}
+.fixed{background:#f7f7f7}.fixed .money input{color:#555}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.result{border-radius:12px;padding:17px 18px;background:#111;color:#fff}.result.alt{background:#f2f7f4;color:#111;border:1px solid #d7e7dd}
+.result .lab{font-size:12px;color:#bbb}.result.alt .lab{color:#557064}.result .val{font-size:27px;font-weight:850;margin-top:3px}.result.alt .val{color:var(--green)}
+.formula{margin-top:10px;color:#777;font-size:11px}.note{margin-top:12px;padding:12px 14px;border-left:4px solid var(--r);background:#fff5f6;font-size:13px}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:9px}.item{border:1px solid var(--l);border-radius:10px;padding:11px 12px}.item b{font-size:13px}.fill{display:block;margin-top:7px;border-top:1px dashed #ccc;padding-top:6px;color:#888;font-size:12px}
+.quote{background:#f6f6f6;padding:17px;border-radius:12px;font-size:15px;font-weight:700}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+button{border:0;border-radius:9px;padding:10px 15px;font-weight:750;cursor:pointer}.primary{background:var(--r);color:#fff}.secondary{background:#eee;color:#222}
+.foot{padding:16px 32px;background:#f7f7f7;color:#777;font-size:11px}
+@media(max-width:650px){.w{margin:0;padding:0}.s{border-radius:0}.top,.c,.foot{padding-left:18px;padding-right:18px}.calc,.results,.items{grid-template-columns:1fr}.hero{flex-direction:column;align-items:flex-start}.hero b{font-size:25px}h1{font-size:21px}.result .val{font-size:24px}}
+@media print{body{background:#fff}.w{margin:0;padding:0;max-width:none}.s{box-shadow:none}.sec{break-inside:avoid}.actions{display:none}}
+</style>
+</head>
+<body><div class="w"><main class="s">
+<header class="top"><div class="kick">PURCHASE NEGOTIATION TOOL</div><h1>Corolla Cross The 60th Hybrid｜購車議價工具</h1>
+<div class="sub">現場輸入業務報價，自動拆分車價、保險、規費、配件與政府減徵。</div>
+<div class="hero"><div><small>牌價</small><br><b>NT$ 919,000</b></div><span class="badge">The 60th Hybrid</span></div></header>
+<div class="c">
+<section class="sec"><h2><span class="n">1</span>即時購車試算</h2>
+<div class="calc">
+<div class="field fixed"><label>牌價</label><div class="money"><span>NT$</span><input id="msrp" type="number" value="919000"></div></div>
+<div class="field"><label>− 業務折扣</label><div class="money"><span>NT$</span><input id="discount" type="number" value="0" min="0" inputmode="numeric"></div><small>請填業務／經銷商真正折讓</small></div>
+<div class="field fixed"><label>− 新購貨物稅減徵</label><div class="money"><span>NT$</span><input id="newtax" type="number" value="50000" min="0" inputmode="numeric"></div><small>政府項目，與業務折扣分開</small></div>
+<div class="field"><label>− 汰舊換新</label><div class="money"><span>NT$</span><input id="tradein" type="number" value="0" min="0" inputmode="numeric"></div><small>符合資格再填入</small></div>
+<div class="field"><label>＋ 乙式保險</label><div class="money"><span>NT$</span><input id="insurance" type="number" value="0" min="0" inputmode="numeric"></div></div>
+<div class="field"><label>＋ 領牌／代辦規費</label><div class="money"><span>NT$</span><input id="fees" type="number" value="0" min="0" inputmode="numeric"></div></div>
+<div class="field"><label>＋ 自費配件</label><div class="money"><span>NT$</span><input id="accessories" type="number" value="0" min="0" inputmode="numeric"></div><small>免費贈品不要填入</small></div>
+</div>
+<div class="results">
+<div class="result"><div class="lab">A｜交車時付款試算</div><div class="val" id="delivery">NT$ 919,000</div><div class="formula">牌價 − 業務折扣 ＋ 保險 ＋ 規費 ＋ 自費配件</div></div>
+<div class="result alt"><div class="lab">B｜政府減徵後實質總支出</div><div class="val" id="net">NT$ 869,000</div><div class="formula">交車付款 − 新購貨物稅減徵 − 汰舊換新</div></div>
+</div>
+<div class="note"><b>議價原則：</b>政府減徵／補助不要包進業務折扣。實際退稅資格、金額、付款與退稅時點，仍以主管機關及正式購車契約為準。</div>
+</section>
+
+<section class="sec"><h2><span class="n">2</span>希望業務提供的配件</h2><div class="items">
+<div class="item"><b>高階前擋＋全車隔熱紙</b><span class="fill">品牌／型號／價格：________________</span></div>
+<div class="item"><b>前後行車記錄器／電子後視鏡</b><span class="fill">品牌／型號／價格：________________</span></div>
+<div class="item"><b>胎壓數值顯示</b><span class="fill">品牌／型號／價格：________________</span></div>
+<div class="item"><b>防水腳踏墊</b><span class="fill">贈送／價格：______________________</span></div>
+<div class="item"><b>後行李廂托盤</b><span class="fill">贈送／價格：______________________</span></div>
+<div class="item"><b>E-Tag</b><span class="fill">贈送／折抵：______________________</span></div>
+<div class="item"><b>鑰匙皮套 × 2</b><span class="fill">贈送／折抵：______________________</span></div>
+<div class="item"><b>選牌／代辦優惠</b><span class="fill">折抵：____________________________</span></div>
+<div class="item"><b>交車滿油</b><span class="fill">□ 是　□ 否</span></div>
+<div class="item"><b>延長保固／保養券</b><span class="fill">內容／價值：______________________</span></div>
+</div></section>
+
+<section class="sec"><h2><span class="n">3</span>給業務的成交條件</h2>
+<div class="quote">我已確定以 Corolla Cross The 60th Hybrid 為主。我的重點是「空車折扣＋真正有用的配件」。政府補助請與業務折扣分開；隔熱紙與行車記錄器請寫明品牌、型號與價格。請提供「交車時付款總額」及「政府退稅後實質總支出」。條件合適即可進一步談下訂。</div>
+<div class="actions"><button class="primary" onclick="window.print()">列印／另存 PDF</button><button class="secondary" onclick="resetCalc()">清除試算</button></div>
+</section>
+</div>
+<footer class="foot">購車試算工具｜輸入內容僅儲存在目前瀏覽器畫面，不會上傳。實際售價、折扣、稅費、保險、配件及政府減徵資格，以正式報價、契約與主管機關規定為準。</footer>
+</main></div>
+<script>
+const ids=['msrp','discount','newtax','tradein','insurance','fees','accessories'];
+const n=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+const fmt=x=>'NT$ '+Math.round(x).toLocaleString('zh-TW');
+function calc(){
+ const delivery=n('msrp')-n('discount')+n('insurance')+n('fees')+n('accessories');
+ const net=delivery-n('newtax')-n('tradein');
+ document.getElementById('delivery').textContent=fmt(delivery);
+ document.getElementById('net').textContent=fmt(net);
+}
+function resetCalc(){
+ document.getElementById('msrp').value=919000;document.getElementById('discount').value=0;
+ document.getElementById('newtax').value=50000;document.getElementById('tradein').value=0;
+ document.getElementById('insurance').value=0;document.getElementById('fees').value=0;
+ document.getElementById('accessories').value=0;calc();
+}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script></body></html>
